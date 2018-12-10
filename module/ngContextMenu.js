@@ -127,7 +127,7 @@
 
                         if ('preventDefault' in event) {
 
-                            if(!attributes.persistentMenu) contextMenu.cancelAll();
+                            if(!attributes.persistentMenu) { contextMenu.cancelAll(); }
                             event.stopPropagation();
                             event.preventDefault();
                             scope.position = { x: event.clientX, y: event.clientY };
@@ -141,7 +141,7 @@
                         }
 
                         var opened = scope.menu;
-                        if (attributes.persistentMenu) contextMenu.cancelAll();
+                        if (attributes.persistentMenu) { contextMenu.cancelAll(); }
 
                         if (!attributes.persistentMenu || !opened) {
                             $templateRequest($sce.getTrustedResourceUrl(attributes.contextMenu)).then(function then(template) {
@@ -169,7 +169,7 @@
                                     })
                                 });
                                 scope.menu = menu;
-                                if (!attributes.persistentMenu) scope.menu.bind('click', closeMenu);
+                                if (!attributes.persistentMenu) { scope.menu.bind('click', closeMenu); }
 
                             });
                         }
